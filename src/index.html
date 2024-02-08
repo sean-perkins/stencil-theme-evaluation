@@ -8,17 +8,102 @@
     <script type="module" src="/build/stencil-os-ionic.esm.js"></script>
     <script nomodule src="/build/stencil-os-ionic.js"></script>
 
+    <link href="https://fonts.cdnfonts.com/css/noto-sans" rel="stylesheet" />
+
     <style>
+      /* OS Default Theme */
+      :root {
+        --ion-font-family: 'Noto Sans', sans-serif;
+
+        /* These are global tokens that need to be defined in the global stylesheet. Defining here to save time */
+
+        /* Typography */
+        --ion-heading-1: normal 600 30px / 40px var(--ion-font-family, 'Noto Sans'), sans-serif;
+
+        /* Text Sizes */
+        --ion-text-body-lg: 16px;
+        --ion-text-body-base: 14px;
+        --ion-text-body-sm: 12px;
+        --ion-text-body-xs: 11px;
+
+        /* Font Weight */
+        --ion-font-light: 300;
+        --ion-font-normal: 400;
+        --ion-font-medium: 500;
+        --ion-font-semi-bold: 600;
+
+        /* Corner Radius */
+        --ion-rounded-none: 0px;
+        --ion-rounded-sm: 4px;
+        --ion-rounded-md: 8px;
+        --ion-rounded-lg: 16px;
+        --ion-rounded-xl: 32px;
+        --ion-rounded-full: 100%;
+
+        /* Spacing */
+        --ion-spacing-0: 0px;
+        --ion-spacing-1: 4px;
+        --ion-spacing-2: 8px;
+        --ion-spacing-3: 12px;
+        --ion-spacing-4: 16px;
+        --ion-spacing-5: 20px;
+        --ion-spacing-6: 24px;
+        --ion-spacing-7: 32px;
+        --ion-spacing-8: 40px;
+        --ion-spacing-9: 48px;
+
+        /* Shadows */
+        --ion-shadow-none: none;
+        --ion-shadow-1: 0px 2px 1px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.75);
+        --ion-shadow-2: 0px 0px 2px rgba(0, 0, 0, 0.6), 0px 2px 10px rgba(0, 0, 0, 0.3);
+        --ion-shadow-3: 0px 0px 3px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.45);
+        --ion-shadow-4: 0px 32px 64px rgba(0, 0, 0, 0.56), 0px 2px 21px rgba(0, 0, 0, 0.55);
+
+        /* TODO - This uses a primary color that needs to be passed through */
+        --ion-shadow-link-focus: 0px 0px 0px 3px rgba(77, 74, 230, 0.6);
+        --ion-shadow-component-focus: 0px 0px 0px 3px rgba(77, 74, 230, 0.6), 0px 1px 2px rgba(0, 0, 0, 0.15);
+        --ion-shadow-component-error-focus: 0px 0px 0px 3px rgba(229, 61, 39, 0.6), 0px 1px 2px rgba(0, 0, 0, 0.15);
+
+        /* Text Color */
+        --ion-text-primary: #f9fafb;
+        --ion-text-secondary: #949ca8;
+        --ion-text-error: #f56451;
+        --ion-text-warning: #f4b736;
+        --ion-text-success: #4ed795;
+        --ion-text-info: #51a0f5;
+
+        /* Not sure why the button primary style has its own color token */
+        --ion-button-primary-text: #ffffff;
+
+        /* I made these up. These should just be shade/tint tokens used in the button.os.css */
+        --ion-border-primary: #5252f2;
+        --ion-background-primary: #5252f2;
+        --ion-background-primary-hover: #5e60f9;
+        --ion-background-primary-active: #777afd;
+      }
+
+      /* Custom Theme - Pretend this is driven by customer settings */
       .custom {
-        --ion-background-color: orange;
+        --ion-background-primary: orange;
+        --ion-background-primary-hover: #f9a03f;
+        --ion-background-primary-active: #f9a03f;
+
+        --ion-border-primary: orange;
       }
     </style>
   </head>
   <body>
+    <p>
+      This demo demonstrates separating the UI and UX of how Ionic Framework is architected to enable the ability to have the "UX" based on the platform (iOS or Android), but have
+      a custom appearance (UI).
+      <br />
+      The "OS" theme is the only theme that consumes the global design tokens. It is the "customizable" theme, where the iOS and MD modes offer limited customization.
+    </p>
+
     <h3>Default mode detection:</h3>
     <my-button theme="ios">iOS</my-button>
     <my-button theme="md">MD</my-button>
-    <my-button theme="os">OS</my-button>
+    <my-button theme="os">Primary</my-button>
     <my-button class="custom" theme="os">OS Themed</my-button>
     <h3>Mode: md</h3>
     <my-button mode="md" theme="ios">iOS</my-button>
@@ -30,5 +115,9 @@
     <my-button mode="ios" theme="md">MD</my-button>
     <my-button mode="ios" theme="os">OS</my-button>
     <my-button class="custom" mode="ios" theme="os">OS Themed</my-button>
+
+    <h3>OS Button</h3>
+    <my-button theme="os">Primary</my-button>
+    <my-button theme="os" disabled="true">Disabled</my-button>
   </body>
 </html>

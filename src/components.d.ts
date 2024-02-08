@@ -9,6 +9,10 @@ import { Mode } from "./utils/utils";
 export { Mode } from "./utils/utils";
 export namespace Components {
     interface MyButton {
+        "disabled": boolean;
+        /**
+          * The mode refers to the feel of the button. This could reflect iOS specific behaviors, Android (MD) specific behaviors, or eventually web specific behaviors.  This demo only includes "md" and "ios" modes to align with Ionic Framework.
+         */
         "mode": Mode;
         /**
           * The theme determines which styles to use.
@@ -29,6 +33,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MyButton {
+        "disabled"?: boolean;
+        /**
+          * The mode refers to the feel of the button. This could reflect iOS specific behaviors, Android (MD) specific behaviors, or eventually web specific behaviors.  This demo only includes "md" and "ios" modes to align with Ionic Framework.
+         */
         "mode"?: Mode;
         /**
           * The theme determines which styles to use.

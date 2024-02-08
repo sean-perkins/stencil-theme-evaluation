@@ -15,5 +15,9 @@ export const getIonMode = (ref?: any) => {
   return 'md';
 }
 
+export const getIonTheme = (ref: any) => {
+  return getMode(ref);
+}
+
 export type Mode = 'ios' | 'md';
 export type Theme = 'ios' | 'md' | 'os';

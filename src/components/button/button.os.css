@@ -1,37 +1,61 @@
 @import './button.common.css';
 
 :host {
-  --border-color: var(--ion-border-color, #37ad4b);
-  --background: var(--ion-background-color, #37ad4b);
-  --background-hover: var(--ion-background-color-shade, #2a8e3c);
-  --background-active: var(--ion-background-color-tint, #1e702b);
+  --color: var(--ion-button-primary-text, var(--ion-text-primary, #f9fafb));
+  --border-color: var(--ion-border-primary);
+  --background: var(--ion-background-primary);
+  --background-hover: var(--ion-background-primary-hover);
+  --background-active: var(--ion-background-primary-active);
+
+  --color-disabled: #777f8d;
+  --background-disabled: #3e34ac;
+  --border-disabled: #3e34ac;
+
+  --height: 40px;
 }
 
 button {
-  display: inline-block;
-  padding: var(--ion-spacing-xs, 10px) var(--ion-spacing-sm, 20px);
-  font-size: var(--ion-font-base, 16px);
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  border-radius: var(--ion-border-rounded, 4px);
-  border: var(--ion-border, 2px) solid var(--ion-border-color);
-  color: #fff;
-  background-color: var(--background);
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--ion-spacing-0) var(--ion-spacing-4);
+
+  height: var(--height);
+
+  background: var(--background);
+
+  border: 1px solid var(--border-color);
+
+  /* Figma kit uses a shadow that isn't part of the defined tokens */
+  box-shadow: var(--ion-shadow-1);
+  border-radius: var(--ion-rounded-md);
+
+  font-family: var(--ion-font-family);
+  font-style: normal;
+  font-weight: var(--ion-font-medium);
+  font-size: var(--ion-text-body-base);
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: var(--color);
 }
 
 button:hover,
 button:focus {
-  background-color: var(--background-hover);
+  background: var(--background-hover);
 }
 
 button:active {
-  background-color: var(--background-tint);
+  background: var(--background-active);
 }
 
 button:disabled {
-  opacity: 0.5;
+  background: var(--background-disabled);
+  border-color: var(--border-disabled);
+
+  color: var(--color-disabled);
+
   cursor: not-allowed;
 }

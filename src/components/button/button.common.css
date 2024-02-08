@@ -1,5 +1,9 @@
+/* These styles are shared across all themes */
+
 button {
   appearance: none;
 
   border: 0;
+
+  cursor: pointer;
 }
