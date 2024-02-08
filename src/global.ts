@@ -2,6 +2,8 @@ import { setMode } from "@stencil/core";
 
 const defaultTheme = 'md';
 
+export const styleMap = new Map<string, string>();
+
 const isAllowedTheme = (theme: string) => ['ios', 'md', 'os'].includes(theme);
 
 export const initialize = () => {
