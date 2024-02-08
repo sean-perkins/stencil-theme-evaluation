@@ -7,8 +7,28 @@
 
     <script type="module" src="/build/stencil-os-ionic.esm.js"></script>
     <script nomodule src="/build/stencil-os-ionic.js"></script>
+
+    <style>
+      .custom {
+        --ion-background-color: orange;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <h3>Default mode detection:</h3>
+    <my-button theme="ios">iOS</my-button>
+    <my-button theme="md">MD</my-button>
+    <my-button theme="os">OS</my-button>
+    <my-button class="custom" theme="os">OS Themed</my-button>
+    <h3>Mode: md</h3>
+    <my-button mode="md" theme="ios">iOS</my-button>
+    <my-button mode="md" theme="md">MD</my-button>
+    <my-button mode="md" theme="os">OS</my-button>
+    <my-button class="custom" mode="md" theme="os">OS Themed</my-button>
+    <h3>Mode: iOS</h3>
+    <my-button mode="ios" theme="ios">iOS</my-button>
+    <my-button mode="ios" theme="md">MD</my-button>
+    <my-button mode="ios" theme="os">OS</my-button>
+    <my-button class="custom" mode="ios" theme="os">OS Themed</my-button>
   </body>
 </html>

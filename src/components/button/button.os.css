@@ -1,0 +1,37 @@
+@import './button.common.css';
+
+:host {
+  --border-color: var(--ion-border-color, #37ad4b);
+  --background: var(--ion-background-color, #37ad4b);
+  --background-hover: var(--ion-background-color-shade, #2a8e3c);
+  --background-active: var(--ion-background-color-tint, #1e702b);
+}
+
+button {
+  display: inline-block;
+  padding: var(--ion-spacing-xs, 10px) var(--ion-spacing-sm, 20px);
+  font-size: var(--ion-font-base, 16px);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--ion-border-rounded, 4px);
+  border: var(--ion-border, 2px) solid var(--ion-border-color);
+  color: #fff;
+  background-color: var(--background);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--background-hover);
+}
+
+button:active {
+  background-color: var(--background-tint);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
